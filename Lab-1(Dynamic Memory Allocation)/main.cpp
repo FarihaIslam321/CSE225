@@ -1,31 +1,43 @@
-//Task - 01
-
 #include <iostream>
 
 using namespace std;
 
 int main()
 {
-    int m;
-    cout<<"Enter the array size : "<<endl;
+    int m,n;
+    cout<<"Enter the array row : "<<endl;
     cin>>m;
+    cout<<"Enter the array column : "<<endl;
+    cin>>n;
 
-    int *p;
-    p = new int[m];
+    char **p;
+    p = new char *[m];
 
     for(int i=0;i<m;i++)
     {
-        cout<<"Enter the number"<<"["<<i<<"]: "<<endl;
-        cin>>p[i];
+        p[i] = new char[n];
     }
 
     for(int i=0;i<m;i++)
     {
-        cout<<p[i]<<" ";
+        for(int j=0; j<n;j++)
+        {
+            cout<<"Enter elements["<< i << j << "]: "<<endl;
+            cin>>p[i][j];
+        }
     }
-    cout<<endl;
 
-    delete []p;
+    for(int i=0;i<m;i++)
+    {
+        for(int j=0; j<n;j++)
+        {
+            cout<<p[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+
+    delete[] p;
 
     return 0;
+
 }
