@@ -4,40 +4,26 @@ using namespace std;
 
 int main()
 {
-    int m,n;
-    cout<<"Enter the array row : "<<endl;
+    int m;
+    cout<<"Enter the array size : "<<endl;
     cin>>m;
-    cout<<"Enter the array column : "<<endl;
-    cin>>n;
 
-    char **p;
-    p = new char *[m];
+    int *p;
+    p = new int[m];
 
     for(int i=0;i<m;i++)
     {
-        p[i] = new char[n];
+        cout<<"Enter the number"<<"["<<i<<"]: "<<endl;
+        cin>>p[i];
     }
 
     for(int i=0;i<m;i++)
     {
-        for(int j=0; j<n;j++)
-        {
-            cout<<"Enter elements["<< i << j << "]: "<<endl;
-            cin>>p[i][j];
-        }
+        cout<<p[i]<<" ";
     }
+    cout<<endl;
 
-    for(int i=0;i<m;i++)
-    {
-        for(int j=0; j<n;j++)
-        {
-            cout<<p[i][j]<<" ";
-        }
-        cout<<endl;
-    }
-
-    delete[] p;
+    delete []p;
 
     return 0;
-
 }
